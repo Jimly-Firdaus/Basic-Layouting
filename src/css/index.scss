@@ -1,9 +1,7 @@
 @import "./color.scss";
 @import "./font.scss";
 
-// TODO: Mobile responsive
-$breakeven-screen: 1355px;
-//$font-family-web:
+$breakeven-screen: 1024px;
 
 html {
   scroll-behavior: smooth;
@@ -24,10 +22,11 @@ li {
 
 // Header
 .header {
-  width: 100%;
+  width: 100vw;
   height: 5em;
   background-color: $bg-header;
   padding-bottom: 2em;
+  padding-right: 10em;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -47,7 +46,8 @@ li {
 
 .header li {
   float: left;
-  margin-right: 10rem;
+  min-width: 5em;
+  margin-right: 5em;
 }
 
 // Container
@@ -57,6 +57,9 @@ li {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  @media (max-width: $breakeven-screen) {
+    margin-left: 10em;
+  }
 }
 
 .menu {
@@ -84,20 +87,27 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 15%;
+  width: 25%;
   border-radius: 15px;
   padding: 10px;
   margin: 10px;
   @media (max-width: $breakeven-screen) {
-    width: 30%;
+    width: 50%;
   }
 }
 
-
-.image-container {
-  background-image: url("../assets/menu_1.svg");
+.image-container-1,
+.image-container-2,
+.image-container-3,
+.image-container-4,
+.image-container-5,
+.image-container-6,
+.image-container-7,
+.image-container-8
+{
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   width: 12em;
   height: 18em;
   @media (max-width: $breakeven-screen) {
@@ -106,11 +116,50 @@ li {
   }
 }
 
+.image-container-1 {
+  background-image: url("../assets/menu_1.svg");
+}
+
+.image-container-2 {
+  background-image: url("../assets/menu_2.svg");
+}
+
+.image-container-3 {
+  background-image: url("../assets/menu_3.svg");
+}
+
+.image-container-4 {
+  background-image: url("../assets/menu_4.svg");
+}
+
+.image-container-5 {
+  background-image: url("../assets/menu_5.svg");
+}
+
+.image-container-6 {
+  background-image: url("../assets/menu_6.svg");
+}
+
+.image-container-7 {
+  background-image: url("../assets/menu_7.svg");
+}
+
+.image-container-8 {
+  background-image: url("../assets/menu_8.svg");
+}
+
+
 .image-description {
   margin-top: 2em;
   font-size: 14px;
   line-height: 1em;
   width: 75%;
+}
+
+.image-description h1 {
+  text-align: center;
+  line-height: 1em;
+  min-height: fit-content;
 }
 
 .about {
@@ -129,14 +178,10 @@ li {
   padding: 2em 5em;
 }
 
-.footer-logo {
-  //background-color: $warning;
-}
-
 .socials-icon {
-  margin-top: 3em;
+  margin-top: 2em;
   left: 0;
-  margin-left: -3em;
+  margin-left: -2.5em;
 }
 
 .socials-icon li {
